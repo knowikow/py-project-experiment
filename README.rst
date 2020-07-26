@@ -1,5 +1,4 @@
-===================================
-Yet another Python project template
-===================================
+=======================================================
+Experimenting with semantic release for Python projects
+=======================================================
 
-A template for Python projects
