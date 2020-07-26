@@ -1,11 +1,9 @@
 ---
 
 dryRun: true
-
 release:
   branches:
     - master
-
 plugins:
   - '@semantic-release/commit-analyzer'
   - '@google/semantic-release-replace-plugin'
