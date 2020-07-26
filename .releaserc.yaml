@@ -14,7 +14,7 @@ plugins:
             hasChanged: true
             numMatches: 1
             numReplacements: 1
-         countMatches: true
+        countMatches: true
   - '@semantic-release/release-notes-generator'
   - '@semantic-release/git'
     assets:
