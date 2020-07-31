@@ -5,7 +5,7 @@ on:
     branches: [ master ]
 
 jobs:
-  Static code checks:
+  lint:
     runs-on: 'ubuntu-latest'
     steps:
     - uses: actions/checkout@v2
