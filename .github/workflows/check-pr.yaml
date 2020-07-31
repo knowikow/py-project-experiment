@@ -11,4 +11,5 @@ jobs:
     - uses: actions/checkout@v2
     - uses: tonybajan/flake8-check-action@v1.0.0
       with:
+        select: B,E,F,W
         repotoken: ${{ secrets.GITHUB_TOKEN }} 
