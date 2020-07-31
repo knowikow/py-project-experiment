@@ -8,8 +8,10 @@ jobs:
   lint:
     runs-on: 'ubuntu-latest'
     steps:
-    - uses: actions/checkout@v2
-    - uses: tonybajan/flake8-check-action@v1.0.0
-      with:
-        select: B,E,F,W
-        repotoken: ${{ secrets.GITHUB_TOKEN }} 
+      - uses: actions/checkout@v2
+      - name: Run flake8
+        uses: suo/flake8-github-action@releases/v1
+        with:
+          checkName: 'lint'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
