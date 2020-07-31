@@ -5,7 +5,6 @@ name: Check Branch
 
 on:
   push:
-    branches: [ master ]
   pull_request:
     branches: [ master ]
 
