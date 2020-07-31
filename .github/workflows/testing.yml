@@ -10,13 +10,6 @@ on:
     branches: [ master ]
 
 jobs:
-  flake8:
-    runs-on: 'ubuntu-latest'
-    steps:
-    - uses: actions/checkout@v2
-    - name: Static code checks
-      uses: TrueBrain/actions-flake8@v1.2
-
   pytest:
     runs-on: ${{ matrix.os }}
     strategy:
