@@ -11,8 +11,11 @@ jobs:
     steps:
       - name: 'Create draft release'
         uses: release-drafter/release-drafter@v5
+        id: draft
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Print draft release information
+        run: echo "id=${{ steps.draft.outputs.id }}, name=${{ steps.draft.outputs.name }}, tag_name=${{ steps.draft.outputs.tag_name }}"
 
 #      - name: 'Set draft version number'
 #        uses: pinio/draft-semver@v1
