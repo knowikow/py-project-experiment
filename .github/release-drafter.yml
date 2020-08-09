@@ -1,13 +1,12 @@
+name-template: 'Release $RESOLVED_VERSION'
+tag-template: 'v$RESOLVED_VERSION'
 version-resolver:
   major:
     labels:
-      - 'major'
+      - 'BREAKING'
   minor:
     labels:
-      - 'minor'
-  patch:
-    labels:
-      - 'patch'
+      - 'feature'
   default: patch
 template: |
   ## What’s Changed
