@@ -11,7 +11,14 @@ jobs:
   update-release-draft:
     runs-on: ubuntu-latest
     steps:
-      # Drafts your next Release notes as Pull Requests are merged into "master"
-      - uses: release-drafter/release-drafter@v5
+      - name: 'Create draft release'
+        uses: release-drafter/release-drafter@v5
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: 'Set draft version number'
+        uses: pinio/draft-semver@v1
+        id: semver
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Print the next version
+        run: echo "Next version - ${{ steps.semver.outputs.version-identifier }}"
