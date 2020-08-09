@@ -1,8 +1,8 @@
 name: Draft a Release
 
 on:
-  pull_request:
-    types: closed
+  push:
+    #types: closed
     branches:
       - master
 
