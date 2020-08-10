@@ -25,8 +25,8 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: "Apply __version__"
-          file_pattern: "*.py"
           tagging_message: ${{ steps.draft.outputs.tag_name }}"
+#          file_pattern: "*.py"
 #          github_token: ${{ secrets.GITHUB_TOKEN }}
 
 #      - name: Print draft release information
