@@ -15,11 +15,18 @@ jobs:
         id: draft
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: 'Create version string'
+        uses: frabert/replace-string-action@v1.1
+        id: version
+        with:
+          pattern: 'v(\d+\.\d+\.\d+)'
+          string: '${{ steps.draft.outputs.tag_name }}'
+          replace-with: '$1'
       - name: Update __version__
         uses: jacobtomlinson/gha-find-replace@0.1.2
         with:
           find: __version__ = '\d+\.\d+\.\d+'
-          replace: __version__ = '${{ steps.draft.outputs.tag_name }}'
+          replace: __version__ = '${{ steps.version.outputs.replaced }}'
           include: ".*\\.py"
       - name: Push __version__
         uses: stefanzweifel/git-auto-commit-action@v4
