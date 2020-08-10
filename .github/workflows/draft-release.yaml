@@ -28,7 +28,11 @@ jobs:
           find: __version__ = '\d+\.\d+\.\d+'
           replace: __version__ = '${{ steps.version.outputs.replaced }}'
           include: ".*\\.py"
-      - name: Push __version__
+      - name: Update changelog
+        uses: thomaseizinger/keep-a-changelog-new-release@v1
+        with:
+          version: ${{ steps.version.outputs.replaced }}
+      - name: Push __version__ and changelog
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: "Apply __version__"
