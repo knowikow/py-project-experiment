@@ -35,7 +35,7 @@ jobs:
       - name: Push __version__ and changelog
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          commit_message: "Apply __version__"
+          commit_message: "Auto commit: __version__"
           skip_dirty_check: true
 #          tagging_message: ${{ steps.draft.outputs.tag_name }}
 #          file_pattern: "*.py"
