@@ -1,6 +1,9 @@
 name-template: 'Release $RESOLVED_VERSION'
 tag-template: 'v$RESOLVED_VERSION'
-change-template: '- $TITLE @$AUTHOR (#$NUMBER)'
+change-template: |
+  ### $NUMBER: $TITLE
+  
+  $BODY
 version-resolver:
   major:
     labels:
