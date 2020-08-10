@@ -16,7 +16,12 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Print draft release information
         run: echo "id=${{ steps.draft.outputs.id }}, name=${{ steps.draft.outputs.name }}, tag_name=${{ steps.draft.outputs.tag_name }}"
-
+      - name: Bump versions
+        uses: remorses/bump-version@js
+        with:
+            version_file: ./src/ya/experiment/__init__.py
+#            prefix: dir2 # this will prefix the created tag
+            github_token: ${{ secrets.GITHUB_TOKEN }}
 #      - name: 'Set draft version number'
 #        uses: pinio/draft-semver@v1
 #        id: semver
