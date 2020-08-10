@@ -23,7 +23,7 @@ jobs:
 #        with:
 #            version_file: ./src/ya/experiment/__init__.py
 #            prefix: dir2 # this will prefix the created tag
-ä            github_token: ${{ secrets.GITHUB_TOKEN }}
+#            github_token: ${{ secrets.GITHUB_TOKEN }}
 
 #      - name: 'Set draft version number'
 #        uses: pinio/draft-semver@v1
