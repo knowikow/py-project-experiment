@@ -15,8 +15,22 @@ jobs:
         id: draft
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: Print draft release information
-        run: echo "id=${{ steps.draft.outputs.id }}, name=${{ steps.draft.outputs.name }}, tag_name=${{ steps.draft.outputs.tag_name }}"
+      - name: Update __version__
+        uses: shitiomatic/str-replace@master
+        with:
+          find: __version__ = '0.0.0'
+          replace: __version__ = '${{ steps.draft.outputs.tag_name }}"'
+          include: "*.py"
+      - name: Commit & Push changes
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: "Apply __version__"
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          file_pattern: "*.py"
+          tagging_message: ${{ steps.draft.outputs.tag_name }}"
+
+#      - name: Print draft release information
+#        run: echo "id=${{ steps.draft.outputs.id }}, name=${{ steps.draft.outputs.name }}, tag_name=${{ steps.draft.outputs.tag_name }}"
 
 #      - name: Bump versions
 #        uses: remorses/bump-version@js
