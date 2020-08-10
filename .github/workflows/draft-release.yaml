@@ -21,7 +21,7 @@ jobs:
           find: __version__ = '0.0.0'
           replace: __version__ = '${{ steps.draft.outputs.tag_name }}"'
           include: ".*\\.py"
-      - name: Commit & Push changes
+      - name: Push __version__
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: "Apply __version__"
