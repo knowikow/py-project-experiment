@@ -19,13 +19,13 @@ jobs:
         uses: shitiomatic/str-replace@master
         with:
           find: __version__ = '0.0.0'
-          replace: __version__ = '${{ steps.draft.outputs.tag_name }}"'
+          replace: __version__ = '${{ steps.draft.outputs.tag_name }}'
           include: ".*\\.py"
       - name: Push __version__
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: "Apply __version__"
-          tagging_message: ${{ steps.draft.outputs.tag_name }}"
+          tagging_message: ${{ steps.draft.outputs.tag_name }}
 #          file_pattern: "*.py"
 #          github_token: ${{ secrets.GITHUB_TOKEN }}
 
