@@ -16,9 +16,9 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Update __version__
-        uses: shitiomatic/str-replace@master
+        uses: jacobtomlinson/gha-find-replace@0.1.2
         with:
-          find: __version__ = '0.0.0'
+          find: __version__ = 'v\\d\\.\\d\\.\\d'
           replace: __version__ = '${{ steps.draft.outputs.tag_name }}'
           include: ".*\\.py"
       - name: Push __version__
