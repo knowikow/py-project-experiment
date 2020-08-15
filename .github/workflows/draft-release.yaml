@@ -19,7 +19,7 @@ jobs:
         uses: booxmedialtd/ws-action-parse-semver@v1
         id: version
         with:
-          input-string: ${{ steps.draft.outputs.tag_name }}
+          input_string: ${{ steps.draft.outputs.tag_name }}
           version_extractor_regex: v(.*)$
       - name: Update __version__
         uses: jacobtomlinson/gha-find-replace@0.1.2
