@@ -9,11 +9,12 @@ On push PR to master
 --------------------
 
 - Create or update draft release
+   - https://github.com/marketplace/actions/gh-release
+   - https://github.com/marketplace/actions/generate-changelog (update draft text)
+   - https://github.com/marketplace/actions/generate-changelog-using-github-changelog-generator
    - https://github.com/release-drafter/release-drafter :x:
    - https://github.com/actions/create-release
    - https://github.com/sondreb/action-release
-   - https://github.com/heinrichreimer/action-github-changelog-generator (update draft text)
-   - https://github.com/softprops/action-gh-release
 - Calculate semver from last vn.n.n tag using PR labels, version = <semver>rcn (PEP-440)
    - https://github.com/remorses/bump-version (creates versions 1.2.3-rc4, incompatible with PEP-440)
 - Update "Unreleased" section of CHANGELOG.md
