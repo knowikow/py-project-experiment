@@ -11,7 +11,7 @@ On push PR to master
 - Create or update draft release
    - https://github.com/marketplace/actions/gh-release
    - https://github.com/marketplace/actions/generate-changelog (update draft text)
-   - https://github.com/marketplace/actions/generate-changelog-using-github-changelog-generator
+   - https://github.com/marketplace/actions/generate-changelog-using-github-changelog-generator (no docs :x:)
    - https://github.com/release-drafter/release-drafter :x:
    - https://github.com/actions/create-release
    - https://github.com/sondreb/action-release
