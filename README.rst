@@ -18,9 +18,8 @@ On push PR to master
    - https://github.com/remorses/bump-version (creates versions 1.2.3-rc4, incompatible with PEP-440)
 - Update "Unreleased" section of CHANGELOG.md
    - FIXME :question:
-- Update __version__ = '<version>'
+- Update Python version variable
    - convert from semver-2 to PEP-440
-      - 
 - Run tests
 - Build distribution packages
 - Upload to pypi-test
@@ -33,7 +32,7 @@ On publish release
 - version = <semver>
 - Rename "Unreleased" section of CHANGELOG.md to <version>
    - https://github.com/thomaseizinger/keep-a-changelog-new-release
-- Update __version__ = '<version>'
+- Update Python version variable
 - Run tests
 - Build distribution packages
 - tag <version>
