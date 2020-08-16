@@ -16,6 +16,8 @@ On push PR to master
    - https://github.com/actions/create-release
    - https://github.com/sondreb/action-release
 - Calculate semver from last vn.n.n tag using PR labels, version = <semver>rcn (PEP-440)
+   - https://github.com/marketplace/actions/pr-semver-bump
+   - https://github.com/marketplace/actions/semver-release
    - https://github.com/remorses/bump-version (creates versions 1.2.3-rc4, incompatible with PEP-440)
 - Update "Unreleased" section of CHANGELOG.md
    - FIXME :question:
